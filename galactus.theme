@@ -316,6 +316,25 @@ function galactus_preprocess_block(&$variables) {
  */
 function galactus_preprocess_menu(&$variables) {
   $variables['attributes']['class'][] = 'clearfix';
+  // Add a custom hook so we can apply an 'active' class to list items
+	galactus_menu_active_item($variables['items']);
+}
+
+/**
+ * Implements custom theme hook for menu.html.twig.
+ */
+function galactus_menu_active_item(&$items) {
+	$current_path = \Drupal::request()->getRequestUri();
+	foreach ($items as $key => $item) {
+		// if path is current path, set active to li
+		if ($item['url']->toString() == $current_path) {
+			// add active class to link li
+			$items[$key]['attributes']['class'] = 'active';
+		}
+		if (!empty($items[$key]['below'])) {
+			galactus_menu_active_item($items[$key]['below']);
+		}
+	}
 }
 
 /**
