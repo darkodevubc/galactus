@@ -1,0 +1,11 @@
+two_column:
+  label: 'Test Two column'
+  category: 'UBC Layouts'
+  template: templates/layout-builder/two-column
+  library: galactus/layout-builder
+  default_region: main
+  regions:
+    main:
+      label: Main content
+    sidebar:
+      label: Sidebar

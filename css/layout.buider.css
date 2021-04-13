@@ -1,0 +1,16 @@
+.two-column {
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+		'a a b';
+	grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-area-a {
+	grid-area: a;
+}
+
+.grid-area-b {
+	grid-area: b;
+}

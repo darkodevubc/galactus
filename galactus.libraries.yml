@@ -171,3 +171,9 @@ maintenance-page:
   css:
     theme:
       css/maintenance-page.css: {}
+
+### Layout Builder ###
+layout-builder:
+  css:
+    theme:
+      css/layout.builder.css: {}
